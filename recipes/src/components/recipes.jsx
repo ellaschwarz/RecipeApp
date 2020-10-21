@@ -1,16 +1,21 @@
 import React from 'react'
+import style from '../recipe.module.css'
 
 export default function recipes({title, category, image, ingredients}) {
+
+
     return (
-        <div>
-             <img src={image} alt=""/>
+        <div className={style.recipe}>
+             <img className={style.image} src={image} alt=""/>
             <h1>{title}</h1>
-            <p>{category}</p>
+            <p className={style.category}>{category}</p>
             <ol>
                 {ingredients.map(ingredient => (
                     <li>{ingredient.text}</li>
                 ))}
             </ol>
         </div>
+
+        
     )
 }
